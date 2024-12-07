@@ -14,7 +14,8 @@ import { get_attribute_expression, is_expression_attribute } from '../../../util
 import { closing_tag_omitted } from '../../../../html-tree-validation.js';
 import { list } from '../../../utils/string.js';
 
-const regex_invalid_unquoted_attribute_value_or_self_closing_tag = /^(\/>|[\s"'=<>`])/;
+const regex_invalid_unquoted_attribute_value_or_self_closing_tag = /^(\/(?!>)|[\s"'=<>`])/;
+const regex_valid_file_or_directory_path = /^(?:\.\/|\.\.\/|\/)?[a-zA-Z0-9_\-./]*(?:\/)?$/;
 const regex_invalid_unquoted_attribute_value = /^[\s"'=<>`]/;
 const regex_closing_textarea_tag = /^<\/textarea(\s[^>]*)?>/i;
 const regex_closing_comment = /-->/;
